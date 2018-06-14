@@ -1,1 +1,93 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-GB" }}">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="{{ site.title | default: site.github.repository_name }} : {{ site.description | default: site.github.project_tagline }}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header-wrap" class="outer">
+    <header class="inner">
+        <a href="http://www.manchester.ac.uk" id="site-logo" itemprop="url">
+            <img class="uom-logo" src="assets/images/uom-logo.png" alt="The University of Manchester" id="logo" itemprop="logo">
+        </a>
+        <h1 id="site-name"><a href="/{{ site.baseurl }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        <div class="header-tabs">
+            <a class="header-tab" href="{{ '/news' | relative_url }}">News</a>
+            <a class="header-tab" href="{{ '/workshops' | relative_url }}">Workshops</a>
+            <a class="header-tab" href="{{ '/contact' | relative_url }}">Contact</a>
+        </div>
+    </header>
+
+    <!-- SECONDARY NAVIGATION BAR (BLACK) -->
+    <nav>
+        <ul class="inner">
+            <li class="secondary_navigation_item">
+                <a class="" href="http://www.itservices.manchester.ac.uk/research/" target="_blank">Research IT Training</a>
+            </li>
+            <li class="secondary_navigation_item">
+                <a class="" href="https://www.cmist.manchester.ac.uk/" target="_blank">CMIST Training</a>
+            </li>
+            <li class="secondary_navigation_item">
+                <a class="" href="http://www.library.manchester.ac.uk/contact/other-services/" target="_blank">Library Services Training</a>
+            </li>
+            <li class="secondary_navigation_item">
+                <a class="" href="http://www.staffnet.manchester.ac.uk/staff-learning-and-development/" target="_blank">STDU</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div id="content-wrap" class="outer">
+    <section class="inner">
+        {{ content }}
+    </section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer-wrap" class="outer">
+    <footer class="inner">
+        <div class="logo-wrap">
+            <a href="http://www.manchester.ac.uk/" target="_blank">
+                <img class="footer-logo footer-logo-uom" src="{{ '/assets/images/uom_col_background.png' | relative_url }}"/>
+            </a>
+            <a href="https://carpentries.org/" target="_blank">
+                <img class="footer-logo" src="{{ '/assets/images/carpentries_logo_white.png' | relative_url }}"/>
+            </a>
+            <a href="https://software-carpentry.org/" target="_blank">
+                <img class="footer-logo" src="{{ '/assets/images/swc_logo_white.svg' | relative_url }}"/>
+            </a>
+            <a href="http://www.datacarpentry.org/" target="_blank">
+                <img class="footer-logo" src="{{ '/assets/images/dc_logo_white.png' | relative_url }}"/>
+            </a>
+            <a href="https://software.ac.uk/" target="_blank">
+                <img class="footer-logo" src="{{ '/assets/images/ssi-white.png' | relative_url }}"/>
+            </a>
+        </div>
+    </footer>
+</div>
+
+{% if site.google_analytics %}
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ site.google_analytics }}', 'auto');
+    ga('send', 'pageview');
+</script>
+{% endif %}
+</body>
+</html>

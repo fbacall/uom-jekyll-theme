@@ -1,0 +1,105 @@
+@import "normalize";
+@import "uom-branding";
+
+$inner-width: 1200px;
+
+* {
+  box-sizing: border-box;
+}
+
+.inner {
+  max-width: $inner-width;
+  margin: auto;
+}
+
+#site-logo {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#site-name {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+#header-wrap {
+  background-color: $uom-purple;
+
+  header {
+    padding: 20px 0 10px;
+  }
+
+  nav {
+    background-color: #000033;
+    color: white;
+    font-size: 16px;
+    padding: 10px 0;
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style-image: none;
+        display: inline;
+        margin-right: 2em;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .header-tabs {
+    z-index: 10;
+    float: right;
+    padding-top: 15px;
+
+    @media screen and (max-width: 480px) {
+      padding-top: 0;
+    }
+
+    .header-tab {
+      color: #fff;
+      font-size: 18px;
+      padding: 2px;
+      margin: 0 20px;
+      float: right;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+
+      @media screen and (max-width: 960px) {
+        padding: 2px 10px;
+        margin: 0 5px;
+      }
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 2px solid #ffffff;
+      }
+    }
+  }
+}
+
+#content-wrap {
+  section {
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+  }
+}
+
