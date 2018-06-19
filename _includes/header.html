@@ -1,0 +1,28 @@
+<div id="header-wrap" class="outer">
+    <header class="inner">
+        <a href="http://www.manchester.ac.uk" id="site-logo" itemprop="url">
+            <img class="uom-logo" src="assets/images/uom-logo.png" alt="The University of Manchester" id="logo" itemprop="logo">
+        </a>
+        <h1 id="site-name"><a href="/{{ site.baseurl }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        <div class="header-tabs">
+            {% for page in site.pages %}
+                {% unless page.exclude_from_nav %}
+                    {% if page.title %}
+                        <a class="header-tab" href="{{ page.path | relative_url }}">{{ page.title }}</a>
+                    {% endif %}
+                {% endunless %}
+            {% endfor %}
+        </div>
+    </header>
+
+    <!-- SECONDARY NAVIGATION BAR (BLACK) -->
+    <nav>
+        <ul class="inner">
+            {% for link in site.secondary_nav %}
+                <li class="secondary_navigation_item">
+                    <a class="" href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
